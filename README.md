@@ -1,6 +1,6 @@
-# Vesktop
+# VesktopPlus
 
-Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with [Vencord](https://github.com/RobinRMC/VencordPlus) pre-installed
+VesktopPlus is a cross platform desktop app aiming to give you a snappier Discord experience with [VencordPlus](https://github.com/RobinRMC/VencordPlus) pre-installed
 
 **Not yet supported**:
 - Global Keybinds
