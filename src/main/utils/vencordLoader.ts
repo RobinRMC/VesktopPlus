@@ -44,7 +44,7 @@ export async function githubGet(endpoint: string) {
 }
 
 export async function downloadVencordFiles() {
-    const release = await githubGet("/repos/Vendicated/Vencord/releases/latest");
+    const release = await githubGet("/repos/RobinRMC/VencordPlus/releases/latest");
 
     const { assets } = JSON.parse(release.toString("utf-8")) as ReleaseData;
 

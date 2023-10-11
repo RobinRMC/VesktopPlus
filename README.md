@@ -1,6 +1,6 @@
 # Vesktop
 
-Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with [Vencord](https://github.com/Vendicated/Vencord) pre-installed
+Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with [Vencord](https://github.com/RobinRMC/VencordPlus) pre-installed
 
 **Not yet supported**:
 - Global Keybinds
@@ -13,11 +13,11 @@ Bug reports, feature requests & contributions are highly appreciated!!
 
 ### Windows
 
-Download and run Vesktop-Setup-VERSION.exe from [releases](https://github.com/Vencord/Vesktop/releases/latest)
+Download and run Vesktop-Setup-VERSION.exe from [releases](https://github.com/RobinRMC/VesktopPlus/releases/latest)
 
 ### Mac
 
-Download and run Vesktop-VERSION.dmg from [releases](https://github.com/Vencord/Vesktop/releases/latest)
+Download and run Vesktop-VERSION.dmg from [releases](https://github.com/RobinRMC/VesktopPlus/releases/latest)
 
 ### Linux
 
@@ -27,11 +27,11 @@ Install [vencord-desktop-git](https://aur.archlinux.org/packages/vencord-desktop
 
 #### Ubuntu/Debian based
 
-Download Vesktop-VERSION.deb from [releases](https://github.com/Vencord/Vesktop/releases/latest)
+Download Vesktop-VERSION.deb from [releases](https://github.com/RobinRMC/VesktopPlus/releases/latest)
 
 #### Fedora/RHEL based
 
-Download Vesktop-VERSION.rpm from [releases](https://github.com/Vencord/Vesktop/releases/latest)
+Download Vesktop-VERSION.rpm from [releases](https://github.com/RobinRMC/VesktopPlus/releases/latest)
 
 #### Other
 
@@ -44,7 +44,7 @@ A flatpak is planned, if you want packages for other repos, feel free to create 
 Packaging will create builds in the dist/ folder. You can then install them like mentioned above or distribute them
 
 ```sh
-git clone https://github.com/Vencord/Vesktop
+git clone https://github.com/RobinRMC/VesktopPlus
 cd Vesktop
 
 # Install Dependencies
