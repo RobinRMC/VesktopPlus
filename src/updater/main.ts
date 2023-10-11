@@ -79,7 +79,7 @@ function isOutdated(oldVersion: string, newVersion: string) {
 export async function checkUpdates() {
     // if (IS_DEV) return;
     try {
-        const raw = await githubGet("/repos/Vencord/Vesktop/releases/latest");
+        const raw = await githubGet("/repos/RobinRMC/VesktopPlus/releases/latest");
         const data = JSON.parse(raw.toString("utf-8")) as ReleaseData;
 
         const oldVersion = app.getVersion();
