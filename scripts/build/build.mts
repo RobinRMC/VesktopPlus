@@ -5,6 +5,7 @@
  */
 
 import { BuildContext, BuildOptions, context } from "esbuild";
+import { copyFile } from "fs/promises";
 
 import vencordDep from "./vencordDep.mjs";
 
@@ -34,6 +35,11 @@ async function createContext(options: BuildOptions) {
 }
 
 await Promise.all([
+    process.platform === "linux" &&
+        copyFile(
+            "./node_modules/@vencord/venmic/prebuilds/venmic-addon-linux-x64/node-napi-v7.node",
+            "./static/dist/venmic.node"
+        ).catch(() => console.warn("Failed to copy venmic. Building without venmic support")),
     createContext({
         ...NodeCommonOpts,
         entryPoints: ["src/main/index.ts"],
@@ -65,11 +71,7 @@ await Promise.all([
         tsconfig: "./scripts/build/tsconfig.esbuild.json",
         external: ["@vencord/types/*"],
         plugins: [vencordDep],
-        // TODO: remove legacy name once main Vencord codebase has migrated and some time has passed.
-        // this 0 is very important. we run this script via webFrame.executeJavaScript and the last
-        // expression will be the return value. Without the 0, the return value would be Vesktop which
-        // leads to "An object could not be cloned"
-        footer: { js: ";window.VencordDesktop=Vesktop;0 \n//# sourceURL=VCDRenderer" }
+        footer: { js: "//# sourceURL=VCDRenderer" }
     })
 ]);
 
