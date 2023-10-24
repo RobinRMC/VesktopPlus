@@ -1,6 +1,6 @@
 {
     "name": "VencordDesktop",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "private": true,
     "description": "",
     "keywords": [],
@@ -108,7 +108,8 @@
                 "Type": "Application",
                 "Categories": "Network;InstantMessaging;Chat;",
                 "Keywords": "discord;vencord;electron;chat;",
-                "WMClass": "VencordDesktop"
+                "WMClass": "VencordDesktop",
+                "StartupWMClass": "VencordDesktop"
             }
         },
         "mac": {
