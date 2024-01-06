@@ -6,7 +6,7 @@
 
 import "./ipc";
 
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, nativeTheme } from "electron";
 import { checkUpdates } from "updater/main";
 
 import { DATA_DIR } from "./constants";
@@ -15,6 +15,7 @@ import { createWindows, mainWin } from "./mainWindow";
 import { registerMediaPermissionsHandler } from "./mediaPermissions";
 import { registerScreenShareHandler } from "./screenShare";
 import { Settings } from "./settings";
+import { isDeckGameMode } from "./utils/steamOS";
 
 if (IS_DEV) {
     require("source-map-support").install();
@@ -24,9 +25,9 @@ if (IS_DEV) {
 process.env.VENCORD_USER_DATA_DIR = DATA_DIR;
 
 function init() {
-    const { disableSmoothScroll, disableHardwareAcceleration } = Settings.store;
+    const { disableSmoothScroll, hardwareAcceleration } = Settings.store;
 
-    if (disableHardwareAcceleration) app.disableHardwareAcceleration();
+    if (hardwareAcceleration === false) app.disableHardwareAcceleration();
     if (disableSmoothScroll) {
         app.commandLine.appendSwitch("disable-smooth-scrolling");
     }
@@ -42,6 +43,9 @@ function init() {
         "disable-features",
         "WinRetrieveSuggestionsOnlyOnDemand,HardwareMediaKeyHandling,MediaSessionService,WidgetLayering"
     );
+
+    // In the Flatpak on SteamOS the theme is detected as light, but SteamOS only has a dark mode, so we just override it
+    if (isDeckGameMode) nativeTheme.themeSource = "dark";
 
     app.on("second-instance", (_event, _cmdLine, _cwd, data: any) => {
         if (data.IS_DEV) app.quit();
