@@ -1,5 +1,5 @@
 {
-    "name": "VencordDesktop",
+    "name": "vesktop",
     "version": "0.4.4",
     "private": true,
     "description": "",
@@ -61,7 +61,7 @@
         "pnpm": ">=8"
     },
     "build": {
-        "appId": "dev.vencord.desktop",
+        "appId": "dev.vencord.vesktop",
         "productName": "Vesktop",
         "files": [
             "!*",
@@ -110,8 +110,7 @@
                 "GenericName": "Internet Messenger",
                 "Type": "Application",
                 "Categories": "Network;InstantMessaging;Chat;",
-                "Keywords": "discord;vencord;electron;chat;",
-                "StartupWMClass": "VencordDesktop"
+                "Keywords": "discord;vencord;electron;chat;"
             }
         },
         "mac": {
