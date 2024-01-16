@@ -78,8 +78,7 @@ function initTray(win: BrowserWindow) {
             label: "Open",
             click() {
                 win.show();
-            },
-            enabled: false
+            }
         },
         {
             label: "About",
@@ -122,14 +121,6 @@ function initTray(win: BrowserWindow) {
     tray.setToolTip("Vesktop");
     tray.setContextMenu(trayMenu);
     tray.on("click", () => win.show());
-
-    win.on("show", () => {
-        trayMenu.items[0].enabled = false;
-    });
-
-    win.on("hide", () => {
-        trayMenu.items[0].enabled = true;
-    });
 }
 
 async function clearData(win: BrowserWindow) {
@@ -374,11 +365,11 @@ function createMainWindow() {
     removeSettingsListeners();
     removeVencordSettingsListeners();
 
-    const { staticTitle, transparencyOption, enableMenu, discordWindowsTitleBar } = Settings.store;
+    const { staticTitle, transparencyOption, enableMenu, customTitleBar } = Settings.store;
 
     const { frameless } = VencordSettings.store;
 
-    const noFrame = frameless === true || (process.platform === "win32" && discordWindowsTitleBar === true);
+    const noFrame = frameless === true || customTitleBar === true;
 
     const win = (mainWin = new BrowserWindow({
         show: false,
@@ -398,7 +389,7 @@ function createMainWindow() {
                 backgroundMaterial: transparencyOption
             }),
         // Fix transparencyOption for custom discord titlebar
-        ...(discordWindowsTitleBar &&
+        ...(customTitleBar &&
             transparencyOption &&
             transparencyOption !== "none" && {
                 transparent: true
