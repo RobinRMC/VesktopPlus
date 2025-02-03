@@ -23,6 +23,8 @@ if (IS_DEV) {
     autoUpdater.checkForUpdatesAndNotify();
 }
 
+console.log("Vesktop v" + app.getVersion());
+
 // Make the Vencord files use our DATA_DIR
 process.env.VENCORD_USER_DATA_DIR = DATA_DIR;
 
@@ -35,7 +37,12 @@ function init() {
     if (hardwareAcceleration === false) {
         app.disableHardwareAcceleration();
     } else {
-        enabledFeatures.push("VaapiVideoDecodeLinuxGL", "VaapiVideoEncoder", "VaapiVideoDecoder");
+        enabledFeatures.push(
+            "AcceleratedVideoDecodeLinuxGL",
+            "AcceleratedVideoEncoder",
+            "AcceleratedVideoDecoder",
+            "AcceleratedVideoDecodeLinuxZeroCopyGL"
+        );
     }
 
     if (disableSmoothScroll) {
