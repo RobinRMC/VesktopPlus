@@ -176,7 +176,7 @@ function initMenuBar(win: BrowserWindow) {
             toolTip: "Vesktop+ will automatically restart after this operation"
         },
         {
-            label: "Reset Vesktop",
+            label: "Reset Vesktop+",
             async click() {
                 await clearData(win);
             },
@@ -392,7 +392,7 @@ function initStaticTitle(win: BrowserWindow) {
 
     addSettingsListener("staticTitle", enabled => {
         if (enabled) {
-            win.setTitle("Vesktop");
+            win.setTitle("Vesktop+");
             win.on("page-title-updated", listener);
         } else {
             win.off("page-title-updated", listener);
