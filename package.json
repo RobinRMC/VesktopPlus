@@ -5,7 +5,7 @@
     "description": "A fork of Vesktop pre-packaged with Vencord+",
     "keywords": [],
     "homepage": "https://github.com/RobinRMC/VencordPlus",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "author": "Vendicated <vendicated@riseup.net>",
     "contributors": [
         {
