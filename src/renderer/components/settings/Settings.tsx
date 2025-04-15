@@ -50,7 +50,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "staticTitle",
             title: "Static Title",
-            description: 'Makes the window title "Vesktop" instead of changing to the current page',
+            description: 'Makes the window title "Vesktop+" instead of changing to the current page',
             defaultValue: false
         },
         {
@@ -64,7 +64,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
             key: "enableSplashScreen",
             title: "Enable Splash Screen",
             description:
-                "Shows a small splash screen while Vesktop is loading. Disabling this option will show the main window earlier while it's still loading.",
+                "Shows a small splash screen while Vesktop+ is loading. Disabling this option will show the main window earlier while it's still loading.",
             defaultValue: true
         },
         {
@@ -79,7 +79,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "tray",
             title: "Tray Icon",
-            description: "Add a tray icon for Vesktop",
+            description: "Add a tray icon for Vesktop+",
             defaultValue: true,
             invisible: () => isMac
         },
@@ -94,7 +94,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "clickTrayToShowHide",
             title: "Hide/Show on tray click",
-            description: "Left clicking tray icon will toggle the vesktop window visibility.",
+            description: "Left-clicking the tray icon will toggle the Vesktop's window visibility.",
             defaultValue: false
         },
         {
@@ -122,7 +122,7 @@ const SettingsOptions: Record<string, Array<BooleanSetting | SettingsComponent>>
         {
             key: "openLinksWithElectron",
             title: "Open Links in app (experimental)",
-            description: "Opens links in a new Vesktop window instead of your web browser",
+            description: "Opens links in a new Vesktop+ window instead of your web browser",
             defaultValue: false
         }
     ],
@@ -168,7 +168,7 @@ export default ErrorBoundary.wrap(
         return (
             <Forms.FormSection>
                 <Text variant="heading-lg/semibold" style={{ color: "var(--header-primary)" }} tag="h2">
-                    Vesktop Settings
+                    Vesktop+ Settings
                 </Text>
 
                 <SettingsSections />
@@ -177,6 +177,6 @@ export default ErrorBoundary.wrap(
     },
     {
         message:
-            "Failed to render the Vesktop Settings tab. If this issue persists, try to right click the Vesktop tray icon, then click 'Repair Vencord'. And make sure your Vesktop is up to date."
+            "Failed to render the Vesktop+ Settings tab. If this issue persists. Try to right-click the Vesktop+ tray icon and then click 'Repair Vencord+'. Make sure your Vesktop+ is up to date."
     }
 );
